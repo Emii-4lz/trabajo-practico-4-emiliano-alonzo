@@ -1,6 +1,6 @@
 import express from 'express';
-import sequelize from './config/database.js';
-import Movie from './models/Movie.js'; 
+import sequelize from './src/config/database.js';
+import Movie from './src/models/movies.js'; 
 
 const app = express();
 const PORT = 3000;
