@@ -1,6 +1,7 @@
 import express from 'express';
 import sequelize from './src/config/database.js';
-import Movie from './src/models/movies.js'; 
+//import Movie from './src/models/movies.js';
+import movieRoutes from './src/routes/movies.routes.js';
 
 const app = express();
 const PORT = 3000;
@@ -8,8 +9,10 @@ const PORT = 3000;
 app.use(express.json());
 
 
+app.use('/api', movieRoutes); 
+
 app.get('/', (req, res) => {
-  res.send('El sevidor funciona.');
+  res.send('¡El servidor funciona y las rutas están cargadas!');
 });
 
 async function startServer() {
@@ -26,3 +29,8 @@ async function startServer() {
 }
 
 startServer();
+
+
+
+
+//Creeria que funciona todo, pero no hice la prueba. Pero almenos no dio errores.

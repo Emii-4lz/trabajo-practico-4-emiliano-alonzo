@@ -37,12 +37,6 @@ export const crearPelicula = async (req, res) => {
   }
 };
 
-//Aviso: A partir de aca, agregué comentarios por frustracion. En el proximo commit los borro.
-
-//Vi un tutorial y entendí menos.
-//Tras media hora de reflexion volví.
-
-
 //Edicion de peliculas.
 export const actualizarPelicula = async (req, res) => {
   try {
@@ -69,9 +63,7 @@ export const actualizarPelicula = async (req, res) => {
       return res.status(400).json({ error: `El año debe ser un número entero de 4 dígitos entre 1888 y ${currentYear}.` });
     }
 
-    //POR QUÉ EL VISUAL REEMPLAZA LAS LETRAS EN VEZ DE ESCRIBIR NORAMLMENTE????
-    //Como se desactiva eso, porfavor ayuda.
-
+    
     const peliculaExsite= await Movie.findOne({ 
       where: { 
         title,
